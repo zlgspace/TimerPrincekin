@@ -45,6 +45,9 @@ class TaskManager {
 
     public void addTask(TimeTask task){
         synchronized (lock){
+            //如果任务已经存在，重新添加就表示是想要更新任务，这里删除后重新添加
+            if(tastList.contains(task))
+                tastList.remove(task);
             tastList.add(task);
             if(tastList.size()==1) {
                 Log.d(TAG,"task to join, ready to wake up into the timing state.");
