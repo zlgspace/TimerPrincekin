@@ -5,7 +5,6 @@ package com.zlgspace.timerprincekin;
  */
 public class Task implements ITask {
 
-    //该属性暂时无效
     private int exeThreadType = TYPE_EXE_ON_ASYNC_THREAD;
 
     protected int curExeCount = 0;

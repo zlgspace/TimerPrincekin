@@ -13,7 +13,7 @@ public class TimeTask extends Task{
 
     private SoftReference<Runnable> task;
 
-    private int exeCount = 1;//执行次数，<0无限循环执行
+    private int exeCount = 1;//<=0 loop execution,
 
     public TimeTask(){
 
@@ -63,7 +63,7 @@ public class TimeTask extends Task{
         curExeCount++;
         if((exeCount>0)&&curExeCount>=exeCount)
             return;
-        updateExeTime(delay);//重新计算下次执行时间
+        updateExeTime(delay);
     }
 
     boolean isContinue(){

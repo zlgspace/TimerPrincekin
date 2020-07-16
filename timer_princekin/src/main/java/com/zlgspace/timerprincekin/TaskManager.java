@@ -14,7 +14,6 @@ class TaskManager {
 
     private ArrayList<TimeTask> tastList = new ArrayList<TimeTask>();
 
-    //创建一个Object直接当做锁
     private Object lock = new Object();
 
     private TaskManager(){
@@ -45,7 +44,6 @@ class TaskManager {
 
     public void addTask(TimeTask task){
         synchronized (lock){
-            //如果任务已经存在，重新添加就表示是想要更新任务，这里删除后重新添加
             if(tastList.contains(task))
                 tastList.remove(task);
             tastList.add(task);
